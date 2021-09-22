@@ -27,6 +27,10 @@ async function start() {
 
 start();
 
+app.get('/', (req, res) => {
+    res.send(`<h1>HI</h1>`)
+})
+
 
 //Connecting to localhost
 try {
