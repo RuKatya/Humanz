@@ -2,47 +2,61 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Humanz</title>
+    <%- include('./components/head') %>
 </head>
 
 <body>
-    <h1>Here you can see al the users</h1>
-    <form action="/addUser" method="POST" class="formAddRemembr">
-        <input type="text" name="nameUser" id="nameUser" placeholder="User name">
-        <input type="text" name="idUser" id="idUser" placeholder="User ID">
-        <input type="text" name="ipUser" id="ipUser" placeholder="User IP">
-        <input type="text" name="phoneUser" id="nameUser" placeholder="User phone number">
+    <%- include('./components/sidebar') %>
 
-        <button type="submit">Save</button>
-    </form>
+        <div class="rightSide">
+            <h1>Here you can see all the users</h1>
+            <form action="/addUser" method="POST" class="formAddRemembr">
+                <input type="text" name="nameUser" id="nameUser" placeholder="User name">
+                <input type="text" name="idUser" id="idUser" placeholder="User ID">
+                <input type="text" name="ipUser" id="ipUser" placeholder="User IP">
+                <input type="text" name="phoneUser" id="nameUser" placeholder="User phone number">
 
-    <% console.log(users) %>
-        <% if (users.length) { %>
+                <button type="submit">Save</button>
+            </form>
 
-            <% users.forEach(user=> { %>
-                <div style="display: flex;flex-direction: row;">
-                    <div>
-                        <%- user.Name %>
-                    </div>
-                    <div>
-                        <%- user.ID %>
-                    </div>
-                    <div>
-                        <%- user.IP %>
-                    </div>
-                    <div>
-                        <%- user.Phone %>
-                    </div>
-                </div>
-                <% }) %>
+            <div id="users">
+                <!-- <%# console.log(users) %> -->
+                <% if (users.length) { %>
+
+                    <% users.forEach(user=> { %>
+                        <div style="display: flex;flex-direction: row;">
+                            <div>
+                                <%- user.Name %>
+                            </div>
+                            <div>
+                                <%- user.ID %>
+                            </div>
+                            <div>
+                                <%- user.IP %>
+                            </div>
+                            <div>
+                                <%- user.Phone %>
+                            </div>
+
+                            <form action="/remove" method="POST">
+                                <input type="hidden" name="_id" value="<%- user._id %>">
+                                <button>Delete</button>
+                            </form>
+                        </div>
+                        <% }) %>
 
 
-                    <% } else { %>
-                        <div>No users</div>
-                        <% } %>
+                            <% } else { %>
+                                <div>No users</div>
+                                <% } %>
+            </div>
+        </div>
+
+
+
+        <script src="index.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="AOS.js"></script>
 </body>
 
 </html>

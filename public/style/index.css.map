@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "index.scss",
+        "components/_sidebar.scss"
+    ],
+    "names": [],
+    "file": "index.css"
+}

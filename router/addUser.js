@@ -12,10 +12,10 @@ router.post('/', async (req, res) => {
     console.log(req.body)
 
     const user = new User({
-        name: req.body.nameUser,
-        idUser: req.body.idUser,
-        ip: req.body.ipUser,
-        phone: req.body.phoneUser,
+        Name: req.body.nameUser,
+        ID: req.body.idUser,
+        IP: req.body.ipUser,
+        Phone: req.body.phoneUser,
     })
 
     try {

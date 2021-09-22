@@ -41,9 +41,11 @@ start();
 //ROUTER
 const index = require('./router/index')
 const addUser = require('./router/addUser')
+const removeUser = require('./router/deleteUser')
 
 app.use('/', index)
 app.use('/addUser', addUser)
+app.use('/remove', removeUser)
 
 //Connecting to localhost
 try {
