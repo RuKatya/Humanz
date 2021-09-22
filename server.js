@@ -13,6 +13,10 @@ const mongoose = require('mongoose')
 const color = require('colors')
 //KEYS
 const keys = require('./keys')
+//CONNECT FLASH
+const flash = require('connect-flash')
+//COOKIES
+let session = require('express-session');
 
 //Connecting EJS
 app.set('view engine', 'ejs')
@@ -21,6 +25,14 @@ app.set('views', path.resolve(__dirname, 'pages'))
 
 app.use(bodyParser.urlencoded({ extended: false })) //bodyParser
 app.use(express.static(path.resolve(__dirname, 'public'))) //static
+
+//Cookies
+app.use(session({
+    cookie: { maxAge: 60000 },
+    secret: 'woot',
+    resave: false,
+    saveUninitialized: false
+}));
 
 //Connecting to data
 async function start() {
@@ -38,14 +50,20 @@ async function start() {
 
 start();
 
-//ROUTER
+//Middleware
+app.use(flash())
+
+//Router
 const index = require('./router/index')
 const addUser = require('./router/addUser')
 const removeUser = require('./router/deleteUser')
+const errorPage = require('./router/error')
 
 app.use('/', index)
 app.use('/addUser', addUser)
 app.use('/remove', removeUser)
+
+app.use(errorPage) //page 404
 
 //Connecting to localhost
 try {

@@ -1,1 +1,72 @@
-/* No CSS *//*# sourceMappingURL=index.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+.sideBar {
+  background-color: aqua;
+  width: 20%;
+  height: 100vh;
+  position: fixed;
+  text-align: center;
+}
+
+.sideBar__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  margin: 5% auto;
+}
+
+.sideBar__form--formBtn {
+  padding: 1% 0%;
+  font-size: 1rem;
+  margin: 2% 0%;
+  border-radius: 0.5rem;
+  border: none;
+  text-align: center;
+  outline: none;
+}
+
+input {
+  padding: 1% 0%;
+  font-size: 1rem;
+  margin: 2% 0%;
+  border-radius: 0.5rem;
+  border: none;
+  text-align: center;
+  outline: none;
+}
+
+input::-webkit-input-placeholder {
+  text-align: center;
+}
+
+input:-ms-input-placeholder {
+  text-align: center;
+}
+
+input::-ms-input-placeholder {
+  text-align: center;
+}
+
+input::placeholder {
+  text-align: center;
+}
+
+.rightSide {
+  background-color: burlywood;
+  width: 80%;
+  position: absolute;
+  top: 0;
+  left: 20%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+/*# sourceMappingURL=index.css.map */

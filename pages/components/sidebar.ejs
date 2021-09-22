@@ -1,4 +1,20 @@
 <div class="sideBar">
-    <h1>rgewrfg</h1>
-    <input text="search">
+    <% if (error) { %>
+        <span>
+            <%-error %>
+        </span>
+
+        <% } %>
+
+            <h2>Adding new user to the list</h2>
+            <form action="/addUser" method="POST" class="sideBar__form">
+                <input type="text" name="Name" id="Name" placeholder="User name" value="<%-data.Name%>" required>
+                <input type="text" name="ID" id="ID" placeholder="User ID" value="<%-data.ID%>" required minlength="5">
+                <input type="text" name="IP" id="IP" placeholder="User IP" value="<%-data.IP%>" required>
+                <input type="text" name="Phone" id="Phone" placeholder="User phone number" value="<%-data.Phone%>"
+                    required minlength="9">
+
+                <button type="submit" class="sideBar__form--formBtn">Save</button>
+            </form>
+            <input text="text" id="filter-input">
 </div>

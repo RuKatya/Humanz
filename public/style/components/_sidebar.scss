@@ -1,0 +1,27 @@
+.sideBar {
+    background-color: aqua;
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    text-align: center;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 5% auto;
+
+        &--formBtn {
+            @include inputStyle;
+
+        }
+    }
+}
+
+input {
+    @include inputStyle;
+
+    &::placeholder {
+        text-align: center;
+    }
+}

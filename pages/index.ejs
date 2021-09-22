@@ -9,22 +9,19 @@
     <%- include('./components/sidebar') %>
 
         <div class="rightSide">
-            <h1>Here you can see all the users</h1>
-            <form action="/addUser" method="POST" class="formAddRemembr">
-                <input type="text" name="nameUser" id="nameUser" placeholder="User name">
-                <input type="text" name="idUser" id="idUser" placeholder="User ID">
-                <input type="text" name="ipUser" id="ipUser" placeholder="User IP">
-                <input type="text" name="phoneUser" id="nameUser" placeholder="User phone number">
-
-                <button type="submit">Save</button>
-            </form>
+            <h1>Users</h1>
 
             <div id="users">
                 <!-- <%# console.log(users) %> -->
                 <% if (users.length) { %>
-
+                    <div class="users__info">
+                        <div>Name</div>
+                        <div>ID</div>
+                        <div>IP adress</div>
+                        <div>Phone number</div>
+                    </div>
                     <% users.forEach(user=> { %>
-                        <div style="display: flex;flex-direction: row;">
+                        <div id="filter-list" style="display: flex;flex-direction: row;">
                             <div>
                                 <%- user.Name %>
                             </div>
@@ -38,10 +35,13 @@
                                 <%- user.Phone %>
                             </div>
 
-                            <form action="/remove" method="POST">
-                                <input type="hidden" name="_id" value="<%- user._id %>">
-                                <button>Delete</button>
-                            </form>
+                            <div>
+                                <form action="/remove" method="POST" class="user__form">
+                                    <input type="hidden" name="_id" value="<%- user._id %>">
+                                    <button>Delete</button>
+                                </form>
+                            </div>
+
                         </div>
                         <% }) %>
 
@@ -54,7 +54,7 @@
 
 
 
-        <script src="index.js"></script>
+        <script src="/index.js"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="AOS.js"></script>
 </body>

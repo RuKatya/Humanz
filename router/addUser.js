@@ -8,18 +8,28 @@ const color = require('colors')
 //Models
 const User = require('../models/users')
 
-router.post('/', async (req, res) => {
+//Validation
+const { validationResult } = require('express-validator');
+const { userValidators } = require('../validation/index')
+
+
+router.post('/', userValidators, async (req, res) => {
+    const { Name, ID, IP, Phone } = req.body
+
     console.log(req.body)
 
-    const user = new User({
-        Name: req.body.nameUser,
-        ID: req.body.idUser,
-        IP: req.body.ipUser,
-        Phone: req.body.phoneUser,
-    })
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        req.flash('error', errors.array()[0].msg)
+        return res.status(422).redirect('/');
+    }
 
     try {
+        const user = new User({
+            Name, ID, IP, Phone
+        })
         await user.save();
+        console.log('user saved')
         res.redirect('/')
     } catch (err) {
         console.log(color.bgRed.black(err))
