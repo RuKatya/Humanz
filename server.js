@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 //PATH
 const path = require('path')
 //PORT
-const PORT = process.env.PORT ?? 6565; //connect to port 6565
+const PORT = process.env.PORT ?? 8787; //connect to port 6565
 //MONGOOSE
 const mongoose = require('mongoose')
 //COLORS
@@ -14,12 +14,23 @@ const color = require('colors')
 //KEYS
 const keys = require('./keys')
 
+//Connecting EJS
+app.set('view engine', 'ejs')
+console.log(app.get('view engine'))
+app.set('views', path.resolve(__dirname, 'pages'))
+
+app.use(bodyParser.urlencoded({ extended: false })) //bodyParser
+app.use(express.static(path.resolve(__dirname, 'public'))) //static
+
 //Connecting to data
 async function start() {
     try {
-        await mongoose.connect(keys.MONGODB_URI, () => {
-            console.log(color.bgGreen.black(`DATA CONNECTED`))
-        })
+        await mongoose.connect(
+            keys.MONGODB_URI,
+            { useNewUrlParser: true },
+            () => {
+                console.log(color.bgGreen.black(`DATA CONNECTED`))
+            })
     } catch (err) {
         console.log(color.bgRed.white(err))
     }
@@ -27,10 +38,12 @@ async function start() {
 
 start();
 
-app.get('/', (req, res) => {
-    res.send(`<h1>HI</h1>`)
-})
+//ROUTER
+const index = require('./router/index')
+const addUser = require('./router/addUser')
 
+app.use('/', index)
+app.use('/addUser', addUser)
 
 //Connecting to localhost
 try {

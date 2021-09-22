@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humanz</title>
+</head>
+
+<body>
+    <h1>Here you can see al the users</h1>
+    <form action="/addUser" method="POST" class="formAddRemembr">
+        <input type="text" name="nameUser" id="nameUser" placeholder="User name">
+        <input type="text" name="idUser" id="idUser" placeholder="User ID">
+        <input type="text" name="ipUser" id="ipUser" placeholder="User IP">
+        <input type="text" name="phoneUser" id="nameUser" placeholder="User phone number">
+
+        <button type="submit">Save</button>
+    </form>
+
+    <% console.log(users) %>
+        <% if (users.length) { %>
+
+            <% users.forEach(user=> { %>
+                <div style="display: flex;flex-direction: row;">
+                    <div>
+                        <%- user.Name %>
+                    </div>
+                    <div>
+                        <%- user.ID %>
+                    </div>
+                    <div>
+                        <%- user.IP %>
+                    </div>
+                    <div>
+                        <%- user.Phone %>
+                    </div>
+                </div>
+                <% }) %>
+
+
+                    <% } else { %>
+                        <div>No users</div>
+                        <% } %>
+</body>
+
+</html>
