@@ -1,3 +1,4 @@
+//Filter
 let filter = function () {
     let input = document.getElementById('filter-input');
 
@@ -17,3 +18,25 @@ let filter = function () {
 }
 
 filter();
+
+//IPAPI
+function hendleipapi(e) {
+    e.preventDefault();
+
+    const ipadress = e.target.children.ipadress.value
+
+    console.log(ipadress)
+
+    fetch('/ipapi', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            ipadress
+        })
+    }).then(r => r.json())
+        .then(data => {
+            console.log(data)
+        })
+}

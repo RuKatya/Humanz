@@ -10,53 +10,69 @@
 
         <div class="rightSide">
             <h1>Users</h1>
+            <input text="text" id="filter-input" class="searchArea" placeholder="">
+            <img src="/icons/search.png" alt="search" class="searchArea__img">
 
-            <div id="users">
-                <!-- <%# console.log(users) %> -->
+            <div class="users">
                 <% if (users.length) { %>
-                    <div class="users__info">
+                    <div class="users__data">
                         <div>Name</div>
                         <div>ID</div>
-                        <div>IP adress</div>
-                        <div>Phone number</div>
+                        <div class="users__data--phone">IP adress</div>
+                        <div class="users__data--phone">Phone number</div>
                     </div>
-                    <% users.forEach(user=> { %>
-                        <div id="filter-list" style="display: flex;flex-direction: row;">
-                            <div>
-                                <%- user.Name %>
-                            </div>
-                            <div>
-                                <%- user.ID %>
-                            </div>
-                            <div>
-                                <%- user.IP %>
-                            </div>
-                            <div>
-                                <%- user.Phone %>
-                            </div>
+                    <div class="users__info">
+                        <% users.forEach(user=> { %>
+                            <ul id="filter-list" class="users__info--list">
+                                <li>
+                                    <%- user.Name %>
+                                </li>
+                                <li>
+                                    |
+                                </li>
+                                <li>
+                                    <%- user.ID %>
+                                </li>
+                                <li>
+                                    |
+                                </li>
+                                <li class="users__info--ip">
+                                    <%- user.IP %>
+                                        <form onsubmit="hendleipapi(event)">
+                                            <input type="hidden" name="ipadress" value="<%- user.IP %> ">
+                                            <button type="submit" class="pinBtn"><img src="/icons/pin.png"
+                                                    alt="pin"></button>
+                                        </form>
+                                </li>
+                                <li>
+                                    |
+                                </li>
+                                <li>
+                                    <%- user.Phone %>
+                                </li>
+                                <li>
+                                    |
+                                </li>
+                                <li>
+                                    <form action="/remove" method="POST">
+                                        <input type="hidden" name="_id" value="<%- user._id %>">
+                                        <button class="users__deleteBtn"><img src="/icons/bin.png" alt="bin"></button>
+                                    </form>
+                                </li>
+                            </ul>
 
-                            <div>
-                                <form action="/remove" method="POST" class="user__form">
-                                    <input type="hidden" name="_id" value="<%- user._id %>">
-                                    <button>Delete</button>
-                                </form>
-                            </div>
 
-                        </div>
-                        <% }) %>
-
-
-                            <% } else { %>
-                                <div>No users</div>
-                                <% } %>
+                            <% }) %>
+                                <% } else { %>
+                                    <div>No users</div>
+                                    <% } %>
+                    </div>
             </div>
         </div>
 
 
 
         <script src="/index.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="AOS.js"></script>
 </body>
 
 </html>

@@ -1,9 +1,10 @@
 .sideBar {
-    background-color: aqua;
+    background-color: #1e3d59;
     width: 20%;
     height: 100vh;
     position: fixed;
     text-align: center;
+    color: #f5f0e1;
 
     &__form {
         display: flex;
@@ -11,17 +12,53 @@
         width: 90%;
         margin: 5% auto;
 
+        & input {
+            @include inputStyle;
+
+            &::placeholder {
+                text-align: center;
+                color: black;
+            }
+        }
+
         &--formBtn {
             @include inputStyle;
+            background-color: #ffc13b;
+            // color: #f5f0e1;
+            font-weight: bold;
 
         }
     }
 }
 
-input {
-    @include inputStyle;
+.searchArea {
+    // @include inputStyle;
+    width: 23%;
+    padding: 0.5% 0.5% 0.5% 2.5%;
+    font-size: 1rem;
+    border: none;
+    // text-align: center;
+    outline: none;
+    font-family: 'Quicksand', sans-serif;
+    // margin: 5% 0%;
+    position: absolute;
+    top: 2vh;
+    left: 72%;
+    border-radius: 0.5rem;
+    // z-index: 2;
 
     &::placeholder {
-        text-align: center;
+        // background-image: url('/icons/search.png');
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        // background-position: left;
+        // background-size: 7%;
+    }
+
+    &__img {
+        width: 1.5%;
+        position: absolute;
+        top: 2.7%;
+        left: 72.3%;
     }
 }

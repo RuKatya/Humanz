@@ -1,14 +1,100 @@
 .rightSide {
-    background-color: burlywood;
     width: 80%;
     position: absolute;
     top: 0;
     left: 20%;
+    height: 100vh;
+
+    &>h1 {
+        // width: 20%;
+        background-color: #ffc13b;
+        margin: 0;
+        padding: 1% 0%;
+        text-align: center;
+    }
 }
 
-// .users {
-//     &__info {
-//         // display: grid;
-//         // grid-template-columns: repeat(4, 1fr);
-//     }
-// }
+.users {
+    width: 90%;
+    margin: 1% auto;
+    height: 85vh;
+
+    &__data {
+        @include displayStyle;
+        font-size: 1.2rem;
+        font-weight: bold;
+        width: 86%;
+        margin: 1% 0%;
+
+        & div {
+            border-bottom: 1px solid black;
+        }
+
+        &--phone {
+            position: relative;
+            left: 2%;
+        }
+    }
+
+    &__info {
+        height: 83vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        &--list {
+            display: grid;
+            grid-template-columns: 1.5fr 0.1fr 1fr 0.1fr 2fr 0.1fr 1.5fr 0.1fr 1fr;
+            column-gap: 3%;
+            align-items: center;
+            height: 3.3vh;
+
+            &:hover {
+                background-color: #f5f0e1;
+                border-radius: 0.4rem;
+            }
+
+            & li {
+                list-style: none;
+                text-align: center;
+            }
+        }
+
+        &--ip {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__deleteBtn {
+        @include binPinBtn;
+        position: relative;
+        right: 12%;
+        background-color: rgb(218, 55, 44);
+        width: 15%;
+        padding: 0.5% 0.2%;
+
+        &:hover {
+            background-color: rgb(235, 146, 30);
+        }
+
+        &>img {
+            @include img;
+        }
+    }
+}
+
+.pinBtn {
+    @include binPinBtn;
+    width: 50%;
+    padding: 1% 2%;
+    background-color: rgba(255, 255, 255, 0);
+
+    &:hover {
+        background-color: rgba(200, 196, 196, 0.835);
+    }
+
+    &>img {
+        @include img;
+    }
+}

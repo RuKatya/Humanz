@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 .sideBar {
-  background-color: aqua;
+  background-color: #1e3d59;
   width: 20%;
   height: 100vh;
   position: fixed;
   text-align: center;
+  color: #f5f0e1;
 }
 
 .sideBar__form {
@@ -19,48 +20,203 @@
   margin: 5% auto;
 }
 
+.sideBar__form input {
+  padding: 1% 5%;
+  font-size: 1rem;
+  margin: 2% 0%;
+  border-radius: 0.5rem;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.sideBar__form input::-webkit-input-placeholder {
+  text-align: center;
+  color: black;
+}
+
+.sideBar__form input:-ms-input-placeholder {
+  text-align: center;
+  color: black;
+}
+
+.sideBar__form input::-ms-input-placeholder {
+  text-align: center;
+  color: black;
+}
+
+.sideBar__form input::placeholder {
+  text-align: center;
+  color: black;
+}
+
 .sideBar__form--formBtn {
-  padding: 1% 0%;
+  padding: 1% 5%;
   font-size: 1rem;
   margin: 2% 0%;
   border-radius: 0.5rem;
   border: none;
   text-align: center;
   outline: none;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #ffc13b;
+  font-weight: bold;
 }
 
-input {
-  padding: 1% 0%;
+.searchArea {
+  width: 23%;
+  padding: 0.5% 0.5% 0.5% 2.5%;
   font-size: 1rem;
-  margin: 2% 0%;
-  border-radius: 0.5rem;
   border: none;
-  text-align: center;
   outline: none;
+  font-family: 'Quicksand', sans-serif;
+  position: absolute;
+  top: 2vh;
+  left: 72%;
+  border-radius: 0.5rem;
 }
 
-input::-webkit-input-placeholder {
-  text-align: center;
-}
-
-input:-ms-input-placeholder {
-  text-align: center;
-}
-
-input::-ms-input-placeholder {
-  text-align: center;
-}
-
-input::placeholder {
-  text-align: center;
+.searchArea__img {
+  width: 1.5%;
+  position: absolute;
+  top: 2.7%;
+  left: 72.3%;
 }
 
 .rightSide {
-  background-color: burlywood;
   width: 80%;
   position: absolute;
   top: 0;
   left: 20%;
+  height: 100vh;
+}
+
+.rightSide > h1 {
+  background-color: #ffc13b;
+  margin: 0;
+  padding: 1% 0%;
+  text-align: center;
+}
+
+.users {
+  width: 90%;
+  margin: 1% auto;
+  height: 85vh;
+}
+
+.users__data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 86%;
+  margin: 1% 0%;
+}
+
+.users__data div {
+  border-bottom: 1px solid black;
+}
+
+.users__data--phone {
+  position: relative;
+  left: 2%;
+}
+
+.users__info {
+  height: 83vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.users__info--list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.5fr 0.1fr 1fr 0.1fr 2fr 0.1fr 1.5fr 0.1fr 1fr;
+      grid-template-columns: 1.5fr 0.1fr 1fr 0.1fr 2fr 0.1fr 1.5fr 0.1fr 1fr;
+  -webkit-column-gap: 3%;
+          column-gap: 3%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3.3vh;
+}
+
+.users__info--list:hover {
+  background-color: #f5f0e1;
+  border-radius: 0.4rem;
+}
+
+.users__info--list li {
+  list-style: none;
+  text-align: center;
+}
+
+.users__info--ip {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.users__deleteBtn {
+  border: none;
+  border-radius: 0.2rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
+  position: relative;
+  right: 12%;
+  background-color: #da372c;
+  width: 15%;
+  padding: 0.5% 0.2%;
+}
+
+.users__deleteBtn:hover {
+  background-color: #eb921e;
+}
+
+.users__deleteBtn > img {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.pinBtn {
+  border: none;
+  border-radius: 0.2rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
+  width: 50%;
+  padding: 1% 2%;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.pinBtn:hover {
+  background-color: rgba(200, 196, 196, 0.835);
+}
+
+.pinBtn > img {
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 html,
