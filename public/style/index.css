@@ -512,8 +512,8 @@ iframe {
 
 @media only screen and (max-width: 415px) {
   iframe {
-    width: 400px;
-    height: 300px;
+    width: 350px;
+    height: 250px;
   }
   .backBtn {
     font-size: 1.3rem;
