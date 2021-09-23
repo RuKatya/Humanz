@@ -1,11 +1,16 @@
+//Left side of the main page
 .sideBar {
     background-color: #1e3d59;
     width: 20%;
+    padding: 1% 0%;
     height: 100vh;
     position: fixed;
+    display: block;
     text-align: center;
     color: #f5f0e1;
+    z-index: 1;
 
+    //Form to add new user
     &__form {
         display: flex;
         flex-direction: column;
@@ -14,6 +19,8 @@
 
         & input {
             @include inputStyle;
+
+
 
             &::placeholder {
                 text-align: center;
@@ -24,12 +31,12 @@
         &--formBtn {
             @include inputStyle;
             background-color: #ffc13b;
-            // color: #f5f0e1;
             font-weight: bold;
         }
     }
 }
 
+//Search
 .searchArea {
     width: 23%;
     padding: 0.5% 0.5% 0.5% 2.5%;
@@ -41,7 +48,6 @@
     top: 2vh;
     left: 72%;
     border-radius: 0.5rem;
-    
 
     &__img {
         width: 1.5%;

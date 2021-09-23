@@ -1,0 +1,161 @@
+//1024px
+@media only screen and (max-width: 1024px) {
+    .rightSide {
+        &>h1 {
+            padding: 1.5% 0%;
+        }
+    }
+
+    .users {
+        width: 95%;
+
+        &__data {
+            font-size: 1.1rem;
+            width: 90%;
+
+            &--name {
+                position: relative;
+                left: 2%;
+            }
+
+            &--id {
+                position: relative;
+                left: 3%;
+            }
+        }
+
+        &__deleteBtn {
+            width: 20%;
+        }
+    }
+}
+
+//770px
+@media only screen and (max-width: 770px) {
+    .rightSide {
+        &>h1 {
+            padding: 1.5% 0%;
+        }
+    }
+
+    .users {
+        width: 98%;
+
+        &__data {
+            font-size: 1rem;
+            width: 90%;
+
+            &--name {
+                position: relative;
+                left: 7%;
+            }
+
+            &--id {
+                position: relative;
+                left: 6%;
+            }
+
+            &--phone {
+                left: 2.5%;
+            }
+        }
+
+        &__info {
+            &--list {
+                column-gap: 0.5%;
+            }
+        }
+
+        &__deleteBtn {
+            width: 20%;
+        }
+    }
+
+    .pinBtn {
+        width: 35%;
+    }
+}
+
+//415px
+@media only screen and (max-width: 415px) {
+    .rightSide {
+        width: 100%;
+        left: 0%;
+
+        &>h1 {
+            padding: 1.5% 0%;
+        }
+    }
+
+    .users {
+        width: 98%;
+
+        &__data {
+            @include displayStyle;
+            font-size: 0.8rem;
+            width: 90%;
+            margin: 2% 0%;
+
+            & div {
+                border-bottom: 1px solid black;
+            }
+
+            &--name {
+                left: -1.5%;
+            }
+
+            &--id {
+                left: 1%;
+            }
+
+            &--phone {
+                left: 11%;
+            }
+        }
+
+        &__info {
+            height: 88.5vh;
+
+            & ul {
+                padding: 0;
+                margin: 1% 0%;
+            }
+
+            &--list {
+                grid-template-columns: 1fr 0.1fr 1fr 0.1fr 2fr 0.1fr 1fr 0.1fr 0.3fr;
+                column-gap: 0.3%;
+                height: 8vh;
+                font-size: 0.8rem;
+
+                & li {
+                    align-items: center
+                }
+            }
+        }
+
+        &__deleteBtn {
+            width: 70%;
+            padding: 2% 1%;
+        }
+    }
+
+    .pinBtn {
+        width: 50%;
+    }
+
+    //MENU
+    .menu {
+        display: block;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        background-color: #1e3d59;
+        padding: 2.2% 3%;
+        width: 8%;
+        z-index: 1;
+    }
+
+    .menuCloseBtn {
+        padding: 0.5% 0%;
+    }
+}

@@ -9,15 +9,23 @@
     <%- include('./components/sidebar') %>
 
         <div class="rightSide">
+            <!-- Menu for mobile -->
+            <div class="menu" id="menu"><img src="/icons/menu.png" alt="menu" class="menuBtn"><img
+                    src="/icons/close.png" class="menuCloseBtn" alt="menuCloseBtn"></div>
+
             <h1>Users</h1>
+
+            <!-- Search/Filter -->
             <input text="text" id="filter-input" class="searchArea" placeholder="Search">
             <img src="/icons/search.png" alt="search" class="searchArea__img">
+            <img src="/icons/close.png" class="searchCloseBtn" alt="searchCloseBtn">
 
+            <!-- All the information about users -->
             <div class="users">
-                <% if (users.length) { %>
+                <% if (users.lengthq) { %>
                     <div class="users__data">
-                        <div>Name</div>
-                        <div>ID</div>
+                        <div class="users__data--name">Name</div>
+                        <div class="users__data--id">ID</div>
                         <div class="users__data--phone">IP adress</div>
                         <div class="users__data--phone">Phone number</div>
                     </div>
@@ -38,6 +46,7 @@
                                 </li>
                                 <li class="users__info--ip">
                                     <%- user.IP %>
+                                        <!-- Form to get the geolocation information -->
                                         <form onsubmit="hendleipapi(event)">
                                             <input type="hidden" name="ipadress" value="<%- user.IP %> ">
                                             <button type="submit" class="pinBtn"><img src="/icons/pin.png"
@@ -54,6 +63,7 @@
                                     |
                                 </li>
                                 <li>
+                                    <!-- Deleting user -->
                                     <form action="/remove" method="POST">
                                         <input type="hidden" name="_id" value="<%- user._id %>">
                                         <button class="users__deleteBtn"><img src="/icons/bin.png" alt="bin"></button>
@@ -64,15 +74,21 @@
 
                             <% }) %>
                                 <% } else { %>
-                                    <div>No users</div>
+                                    <div
+                                        style="text-align: center; font-weight: bold; font-size: 1.5rem; margin: 5% 0%;">
+                                        <p>Still no users here.</p>
+                                        <p> &larr; You can add user by using form in the left side of the page.</p>
+                                    </div>
                                     <% } %>
                     </div>
             </div>
         </div>
 
 
-
+        <script src="/jquery-3.6.0.min.js"></script>
+        <script src="/query.js"></script>
         <script src="/index.js"></script>
+
 </body>
 
 </html>

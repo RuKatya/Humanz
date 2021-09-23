@@ -1,0 +1,74 @@
+//1024px
+@media only screen and (max-width: 1024px) {
+    .searchArea {
+        width: 30%;
+        padding: 0.5% 0.5% 0.5% 3.5%;
+        top: 1.5vh;
+        left: 65%;
+
+
+        &__img {
+            width: 2%;
+            top: 2.1%;
+            left: 65.8%;
+        }
+    }
+}
+
+//770px
+@media only screen and (max-width: 770px) {
+    .sideBar {
+        width: 25%;
+
+        &>h2 {
+            margin: 0% 1%;
+        }
+    }
+
+    .searchArea {
+        width: 30%;
+        padding: 0.5% 0.5% 0.5% 3.5%;
+        top: 1.5vh;
+        left: 65%;
+
+        &__img {
+            width: 2%;
+            top: 2.1%;
+            left: 65.8%;
+        }
+    }
+}
+
+//415px
+@media only screen and (max-width: 415px) {
+    .sideBar {
+        width: 90%;
+        display: none;
+        top: 7%;
+
+        &>h2 {
+            margin: 0% 1%;
+        }
+    }
+
+    .searchArea {
+        width: 27%;
+        padding: 0.5% 6% 0.5% 2%;
+        top: 2.2vh;
+        left: 63%;
+        display: none;
+
+        &__img {
+            width: 5%;
+            top: 2.4%;
+            left: 92%;
+        }
+    }
+
+    .searchCloseBtn {
+        width: 5%;
+        position: absolute;
+        top: 2.4%;
+        left: 92%;
+    }
+}

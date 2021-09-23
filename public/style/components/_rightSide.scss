@@ -1,3 +1,4 @@
+//Right side of the main page
 .rightSide {
     width: 80%;
     position: absolute;
@@ -6,7 +7,6 @@
     height: 100vh;
 
     &>h1 {
-        // width: 20%;
         background-color: #ffc13b;
         margin: 0;
         padding: 1% 0%;
@@ -14,11 +14,13 @@
     }
 }
 
+//user content
 .users {
     width: 90%;
     margin: 1% auto;
     height: 85vh;
 
+    //headers of table
     &__data {
         @include displayStyle;
         font-size: 1.2rem;
@@ -36,6 +38,7 @@
         }
     }
 
+    //The information of users
     &__info {
         height: 83vh;
         overflow-y: scroll;
@@ -66,6 +69,7 @@
         }
     }
 
+    //delete user btn 
     &__deleteBtn {
         @include binPinBtn;
         position: relative;
@@ -84,6 +88,7 @@
     }
 }
 
+//pin btn
 .pinBtn {
     @include binPinBtn;
     width: 50%;
@@ -97,4 +102,14 @@
     &>img {
         @include img;
     }
+}
+
+//MENU
+.menu {
+    display: none;
+}
+
+.menuCloseBtn,
+.searchCloseBtn {
+    display: none;
 }

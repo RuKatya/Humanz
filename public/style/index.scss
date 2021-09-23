@@ -11,6 +11,10 @@
 //pages
 @import './errorPage';
 
+//Media query
+@import './mediaQuery/rightSide';
+@import './mediaQuery/sidebar';
+
 html,
 body,
 h3,
@@ -18,4 +22,12 @@ p {
     margin: 0;
     padding: 0;
     font-family: 'Quicksand', sans-serif;
+}
+
+.error {
+    color: red;
+}
+
+span {
+    font-size: 0.8rem;
 }
