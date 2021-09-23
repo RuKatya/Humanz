@@ -1,7 +1,8 @@
 //EXPRESS
 const express = require('express');
 const app = express(); //express
-
+//Axios
+const axios = require('axios').default;
 //BODYPARSER
 const bodyParser = require('body-parser')
 //PATH
@@ -18,7 +19,7 @@ const keys = require('./keys')
 const flash = require('connect-flash')
 //COOKIES
 let session = require('express-session');
-//Fetch
+// //Fetch
 // const fetch = require('node-fetch');
 
 //Connecting EJS
@@ -26,7 +27,8 @@ app.set('view engine', 'ejs')
 console.log(app.get('view engine'))
 app.set('views', path.resolve(__dirname, 'pages'))
 
-app.use(bodyParser.urlencoded({ extended: false })) //bodyParser
+app.use(bodyParser.urlencoded({ extended: true })) //bodyParser
+app.use(bodyParser.json());
 app.use(express.static(path.resolve(__dirname, 'public'))) //static
 
 //Cookies
@@ -57,21 +59,41 @@ start();
 app.use(flash())
 
 
-//IP-API
-app.post('/ipapi', (req, res) => {
-    const { ipadress } = req.body;
+app.post('/ipapi', async (req, res) => {
+    const { ipadress } = await req.body;
 
     console.log(`get ip: ${ipadress}`)
 
-    fetch(`https://ipapi.co/${ipadress}/json`)
-        .then(r => r.json())
-        .then(data => {
+    console.log(ipadress)
+    // axios.post(`http://ip-api.com/json/5.102.195.197`)
+    axios.post(`http://ip-api.com/json/${req.body.ipadress}`)
+        .then((response) => {
+            console.log(response.data)
+            const data = response.data
             res.send({
-                ok: true,
                 data
             })
         })
+        .catch((err) => {
+            console.log(color.bgRed.black(err))
+        })
 })
+
+// //IP-API
+// app.post('/ipapi', (req, res) => {
+//     const { ipadress } = req.body;
+
+//     console.log(`get ip: ${ipadress}`)
+
+//     axios(`https://ipapi.co/${ipadress}/json`)
+//         .then(r => r.json())
+//         .then(data => {
+//             res.send({
+//                 ok: true,
+//                 data
+//             })
+//         })
+// })
 
 //Router
 const index = require('./router/index')
@@ -85,22 +107,6 @@ app.use('/remove', removeUser)
 
 app.use(errorPage) //page 404
 
-// //IP-API
-// app.post('/ipapi', (req, res) => {
-//     const { ipadress } = req.body;
-
-//     console.log(`get ip: ${ipadress}`)
-
-//     console.log(ipadress)
-//     fetch(`http://ip-api.com/json/${ipadress}`)
-//         .then(r => r.json())
-//         .then(ipadress => {
-//             res.send({
-//                 ok: true,
-//                 ipadress
-//             })
-//         })
-// })
 
 //Connecting to localhost
 try {

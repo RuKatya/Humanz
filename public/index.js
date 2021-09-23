@@ -23,7 +23,7 @@ filter();
 function hendleipapi(e) {
     e.preventDefault();
 
-    const ipadress = e.target.children.ipadress.value
+    let ipadress = e.target.children.ipadress.value
 
     console.log(ipadress)
 
@@ -38,5 +38,26 @@ function hendleipapi(e) {
     }).then(r => r.json())
         .then(data => {
             console.log(data)
+            document.getElementById('ipapi').innerHTML = `
+            <div style="
+                display: grid;
+                grid-template-columns: repeat(2, 0.5fr);
+                justify-items: start;
+                align-items: center;
+                width: 93%;
+                margin: 1% auto;
+            ">
+                <h3>Time zone:</h3><p>${data.data.timezone}</p>
+                <h3>Region:</h3><p>${data.data.regionName}</p>
+                <h3>Country:</h3><p>${data.data.country}</p>
+                <h3>City:</h3><p>${data.data.city}</p>
+                <h3>Latitude:</h3><p>${data.data.lat}</p>
+                <h3>Longitude:</h3><p>${data.data.lon}</p>
+            </div>
+            `
+        }).catch((err) => {
+            console.log(err)
         })
 }
+
+

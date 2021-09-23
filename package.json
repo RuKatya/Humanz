@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/RuKatya/Humanz#readme",
   "dependencies": {
+    "axios": "^0.21.4",
     "body-parser": "^1.19.0",
     "colors": "^1.4.0",
     "connect-flash": "^0.1.1",
@@ -27,7 +28,6 @@
     "express-session": "^1.17.2",
     "express-validator": "^6.12.1",
     "mongoose": "^6.0.7",
-    "node-fetch": "^3.0.0",
     "path": "^0.12.7",
     "scss": "^0.2.4"
   }
