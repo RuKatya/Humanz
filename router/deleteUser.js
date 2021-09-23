@@ -9,10 +9,10 @@ const User = require('../models/users')
 
 //DELETE TASK
 router.post('/', async (req, res) => {
-    console.log('deleted?')
+    console.log('User deleted?')
     try {
         await User.findByIdAndDelete(req.body._id)
-        console.log('deleted epta')
+        console.log(`Deleted`)
         res.redirect('/')
 
     } catch (err) {

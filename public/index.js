@@ -3,7 +3,6 @@ let filter = function () {
     let input = document.getElementById('filter-input');
 
     input.addEventListener('keyup', function () {
-
         let filter = input.value.toLowerCase()
         let filterElements = document.querySelectorAll('#filter-list');
 
@@ -25,7 +24,7 @@ function hendleipapi(e) {
 
     let ipadress = e.target.children.ipadress.value
 
-    console.log(ipadress)
+    console.log(`Send the ip adress ${ipadress}`)
 
     fetch('/ipapi', {
         method: 'POST',

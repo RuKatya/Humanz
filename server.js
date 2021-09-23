@@ -19,8 +19,6 @@ const keys = require('./keys')
 const flash = require('connect-flash')
 //COOKIES
 let session = require('express-session');
-// //Fetch
-// const fetch = require('node-fetch');
 
 //Connecting EJS
 app.set('view engine', 'ejs')
@@ -34,7 +32,7 @@ app.use(express.static(path.resolve(__dirname, 'public'))) //static
 //Cookies
 app.use(session({
     cookie: { maxAge: 60000 },
-    secret: 'woot',
+    secret: 'secret',
     resave: false,
     saveUninitialized: false
 }));
@@ -58,15 +56,13 @@ start();
 //Middleware
 app.use(flash())
 
-
+//IP api - post the geolocation information by IP
 app.post('/ipapi', async (req, res) => {
     const { ipadress } = await req.body;
 
     console.log(`get ip: ${ipadress}`)
 
-    console.log(ipadress)
-    // axios.post(`http://ip-api.com/json/5.102.195.197`)
-    axios.post(`http://ip-api.com/json/${req.body.ipadress}`)
+    axios.post(`http://ip-api.com/json/${ipadress}`)
         .then((response) => {
             console.log(response.data)
             const data = response.data
@@ -85,10 +81,9 @@ const addUser = require('./router/addUser')
 const removeUser = require('./router/deleteUser')
 const errorPage = require('./router/error')
 
-app.use('/', index)
-app.use('/addUser', addUser)
-app.use('/remove', removeUser)
-
+app.use('/', index) //Index page
+app.use('/addUser', addUser) //Add user
+app.use('/remove', removeUser) //Delete user
 app.use(errorPage) //page 404
 
 //Connecting to localhost

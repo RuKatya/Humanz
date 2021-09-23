@@ -23,8 +23,9 @@ p {
     }
 }
 
-#canvas {
-    margin: 1% 0%;
+iframe {
+    width: 900px;
+    height: 550px;
 }
 
 .backBtn {
@@ -44,5 +45,4 @@ p {
         background-color: #b98006;
         color: white;
     }
-
 }

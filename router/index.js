@@ -16,10 +16,7 @@ router.get('/', async (req, res) => {
         res.render('index', {
             title: 'Home Page',
             users,
-            error: req.flash('error'),
-            data: {
-                Name, ID, IP, Phone
-            }
+            error: req.flash('error')
         })
     } catch (err) {
         console.log(color.bgRed.black(err))

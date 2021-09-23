@@ -1,3 +1,4 @@
+//Open menu on phone
 $('.menuBtn').click(function () {
     if ($('.sideBar').css('display') == 'none') {
         $('.sideBar').css('display', 'block')
@@ -7,16 +8,7 @@ $('.menuBtn').click(function () {
     }
 })
 
-$('.pinBtn').click(function () {
-    if ($('.sideBar').css('display') == 'none') {
-        $('.sideBar').css('display', 'block')
-        $('.menu').css('width', '84%')
-        $('.menuBtn').css('display', 'none')
-        $('.menuCloseBtn').css('display', 'block')
-    }
-})
-
-
+//Close menu on phone
 $('.menuCloseBtn').click(function () {
     if ($('.sideBar').css('display') == 'block') {
         $('.sideBar').css('display', 'none')
@@ -27,7 +19,17 @@ $('.menuCloseBtn').click(function () {
     }
 })
 
+//Open menu on phone for show the geolocation information
+$('.pinBtn').click(function () {
+    if ($('.sideBar').css('display') == 'none') {
+        $('.sideBar').css('display', 'block')
+        $('.menu').css('width', '84%')
+        $('.menuBtn').css('display', 'none')
+        $('.menuCloseBtn').css('display', 'block')
+    }
+})
 
+//Open search area
 $('.searchArea__img').click(function () {
     if ($('.searchArea').css('display') == 'none') {
         $('.searchArea').css('display', 'block')
@@ -36,6 +38,7 @@ $('.searchArea__img').click(function () {
     }
 })
 
+//Close search area
 $('.searchCloseBtn').click(function () {
     if ($('.searchArea').css('display') == 'block') {
         $('.searchArea').css('display', 'none')

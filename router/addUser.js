@@ -29,7 +29,7 @@ router.post('/', userValidators, async (req, res) => {
             Name, ID, IP, Phone
         })
         await user.save();
-        console.log('user saved')
+        console.log(`User ${Name} saved`)
         res.redirect('/')
     } catch (err) {
         console.log(color.bgRed.black(err))

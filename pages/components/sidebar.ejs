@@ -1,30 +1,33 @@
-<nav>
+<div class="sideBar">
+    <h2>Adding new user to the list</h2>
 
-    <div class="sideBar">
-        <h2>Adding new user to the list</h2>
-        <form action="/addUser" method="POST" class="sideBar__form">
-            <input type="text" name="Name" id="Name" placeholder="User name" required>
-            <span>The name must include only letters.</span>
-            <input type="text" name="ID" id="ID" placeholder="User ID" required minlength="5">
-            <span>Minimun 5 numbers. If youre ID shorter, add 0.</span>
-            <input type="text" name="IP" id="IP" placeholder="User IP" required minlength="7">
-            <span>The IP must contain minimum 7 symbols including dots.</span>
-            <input type="text" name="Phone" id="Phone" placeholder="User phone number" value="+972-" required
-                minlength="9" maxlength="14">
-            <span>Write the phone number without first 0</span>
+    <!-- Adding users form -->
+    <form action="/addUser" method="POST" class="sideBar__form">
+        <!-- Name -->
+        <input type="text" name="Name" id="Name" placeholder="User name" required>
+        <span>The name must include only letters.</span>
+        <!-- ID -->
+        <input type="text" name="ID" id="ID" placeholder="User ID" required minlength="5">
+        <span>Minimun 5 numbers. If youre ID shorter, add 0.</span>
+        <!-- IP -->
+        <input type="text" name="IP" id="IP" placeholder="User IP" required minlength="7">
+        <span>The IP must contain minimum 7 symbols including dots.</span>
+        <!-- Phone number -->
+        <input type="text" name="Phone" id="Phone" placeholder="User phone number" value="+972-" required minlength="9"
+            maxlength="14">
+        <span>Write the phone number without first 0</span>
 
-            <button type="submit" class="sideBar__form--formBtn">Save</button>
-        </form>
+        <button type="submit" class="sideBar__form--formBtn">Save</button>
+    </form>
 
-        <% if (error) { %>
-            <span class="error">
-                <%-error %>
-            </span>
+    <!-- Error alert -->
+    <% if (error) { %>
+        <span class="error">
+            <%-error %>
+        </span>
+        <% } %>
 
-            <% } %>
+            <!-- Getting IP geolocation (AJAX)-->
+            <div id="ipapi"></div>
 
-                <div id="ipapi"></div>
-
-    </div>
-
-</nav>
+</div>

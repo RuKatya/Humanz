@@ -255,8 +255,9 @@ p {
   margin: 1.5% 0%;
 }
 
-#canvas {
-  margin: 1% 0%;
+iframe {
+  width: 900px;
+  height: 550px;
 }
 
 .backBtn {
@@ -479,6 +480,45 @@ p {
     position: absolute;
     top: 2.4%;
     left: 92%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .errorPage__headerOops {
+    padding: 5% 0%;
+    font-size: 3rem;
+  }
+  .errorPage__headerNotFound, .errorPage__headerPlayGame {
+    margin: 6% 0%;
+  }
+  .backBtn {
+    padding: 1% 2%;
+    font-size: 1.5rem;
+    bottom: 10%;
+    left: 37%;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  iframe {
+    width: 700px;
+    height: 450px;
+  }
+  .backBtn {
+    bottom: 10%;
+    left: 34%;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  iframe {
+    width: 400px;
+    height: 300px;
+  }
+  .backBtn {
+    font-size: 1.3rem;
+    bottom: 7%;
+    left: 25%;
   }
 }
 
