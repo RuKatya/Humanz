@@ -12,9 +12,8 @@ exports.userValidators = [
         .isIP()
         .withMessage('Please enter IP')
         .trim(),
-    body('Phone', 'The Phone must to be minimum 9 numbers')
-        .isNumeric({ no_symbols: false })
-        .isLength({ min: 9 })
-        .withMessage('the Phone must to be minimum 9 numbers')
+    body('Phone', 'The Phone must to be minimum 8 numbers')
+        // .isNumeric()
+        .isLength({ min: 8 })
         .trim(),
 ]

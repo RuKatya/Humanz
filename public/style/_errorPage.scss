@@ -1,0 +1,48 @@
+h1,
+h2,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.errorPage {
+    background-color: #f5f0e1;
+    color: #1e3d59;
+    height: 100vh;
+    text-align: center;
+
+    &__headerOops {
+        background-color: #1e3d59;
+        color: #ff6e40;
+        padding: 2% 0%;
+    }
+
+    &__headerNotFound,
+    &__headerPlayGame {
+        margin: 1.5% 0%;
+    }
+}
+
+#canvas {
+    margin: 1% 0%;
+}
+
+.backBtn {
+    text-decoration: none;
+    background-color: #ffc13b;
+    padding: 0.5% 1%;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 6%;
+    left: 44.5%;
+    color: #1e3d59;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: #b98006;
+        color: white;
+    }
+
+}

@@ -6,16 +6,13 @@
 
         <% } %>
 
-            <!-- <input text="text" id="filter-input" class="searchArea" placeholder="">
-            <img src="/icons/search.png" alt="search" class="searchArea__img"> -->
-
             <h2>Adding new user to the list</h2>
             <form action="/addUser" method="POST" class="sideBar__form">
-                <input type="text" name="Name" id="Name" placeholder="User name" value="<%-data.Name%>" required>
-                <input type="text" name="ID" id="ID" placeholder="User ID" value="<%-data.ID%>" required minlength="5">
-                <input type="text" name="IP" id="IP" placeholder="User IP" value="<%-data.IP%>" required>
-                <input type="text" name="Phone" id="Phone" placeholder="User phone number" value="<%-data.Phone%>"
-                    required minlength="9">
+                <input type="text" name="Name" id="Name" placeholder="User name" required>
+                <input type="text" name="ID" id="ID" placeholder="User ID" required minlength="5">
+                <input type="text" name="IP" id="IP" placeholder="User IP" required>
+                <input type="text" name="Phone" id="Phone" placeholder="User phone number" value="+972-" required
+                    minlength="9">
 
                 <button type="submit" class="sideBar__form--formBtn">Save</button>
             </form>

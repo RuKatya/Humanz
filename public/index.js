@@ -47,14 +47,15 @@ function hendleipapi(e) {
                 width: 93%;
                 margin: 1% auto;
             ">
-                <h3>Time zone:</h3><p>${data.data.timezone}</p>
-                <h3>Region:</h3><p>${data.data.regionName}</p>
-                <h3>Country:</h3><p>${data.data.country}</p>
-                <h3>City:</h3><p>${data.data.city}</p>
-                <h3>Latitude:</h3><p>${data.data.lat}</p>
-                <h3>Longitude:</h3><p>${data.data.lon}</p>
+                <b>Time zone:</b><p style="margin:0;padding:2.5% 0%">${data.data.timezone}</p>
+                <b>Region:</b><p style="margin:0;padding:2.5% 0%">${data.data.regionName}</p>
+                <b>Country:</b><p style="margin:0;padding:2.5% 0%">${data.data.country}</p>
+                <b>City:</b><p style="margin:0;padding:2.5% 0%">${data.data.city}</p>
+                <b>Latitude:</b><p style="margin:0;padding:2.5% 0%">${data.data.lat}</p>
+                <b>Longitude:</b><p style="margin:0;padding:2.5% 0%">${data.data.lon}</p>
             </div>
             `
+
         }).catch((err) => {
             console.log(err)
         })

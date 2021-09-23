@@ -1,1 +1,24 @@
-<h1>Error</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./components/head') %>
+</head>
+
+<div class="errorPage">
+    <h1 class="errorPage__headerOops">Oops!</h1>
+
+    <h1 class="errorPage__headerNotFound">The page you are looking for can't be found..</h1>
+
+    <h2 class="errorPage__headerPlayGame">But don't worry, now you can play a flappy bird!</h2>
+    <p>Press &uarr; on the keyboard</p>
+
+    <canvas id='canvas' width="288" height="512"></canvas>
+
+    <a href="/" class="backBtn">Back to main page</a>
+
+    <!-- <button onclick="draw()">start</button> -->
+
+</div>
+
+<script src="bird.js"></script>

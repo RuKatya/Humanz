@@ -79,22 +79,6 @@ app.post('/ipapi', async (req, res) => {
         })
 })
 
-// //IP-API
-// app.post('/ipapi', (req, res) => {
-//     const { ipadress } = req.body;
-
-//     console.log(`get ip: ${ipadress}`)
-
-//     axios(`https://ipapi.co/${ipadress}/json`)
-//         .then(r => r.json())
-//         .then(data => {
-//             res.send({
-//                 ok: true,
-//                 data
-//             })
-//         })
-// })
-
 //Router
 const index = require('./router/index')
 const addUser = require('./router/addUser')
@@ -106,7 +90,6 @@ app.use('/addUser', addUser)
 app.use('/remove', removeUser)
 
 app.use(errorPage) //page 404
-
 
 //Connecting to localhost
 try {
